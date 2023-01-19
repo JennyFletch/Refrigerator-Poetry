@@ -1,0 +1,20 @@
+[
+    {
+      "description": "I'm an RoR developer and couldn't agree with you more.",
+      "date_created": "01-05-2023",
+      "user_id": 3,
+      "post_id": 1
+    },
+    {
+      "description": "Thanks a lot, Steve.",
+      "date_created": "11-15-2022",
+      "user_id": 2,
+      "post_id": 2
+    },
+    {
+      "description": "Wordpress definitely was a game-changer for my business!",
+      "date_created": "09-22-2021",
+      "user_id": 1,
+      "post_id": 3
+    }
+]  

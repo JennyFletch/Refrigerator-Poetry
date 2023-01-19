@@ -1,0 +1,119 @@
+<!-- display registration form if user is not logged in -->
+<!-- otherwise they get to create new posts as a registered user -->
+
+<div class="title-bar">
+    <h1 class="container py-2">Create a Post</h1>
+</div>
+
+<div class="create-a-post container">
+
+      
+        {{#if posts}} <!-- EDIT AN EXISTING POST -->
+          {{#each posts as |post|}}
+
+            <form class='form update-a-post-form' data-id="{{post.id}}" data-func="update">
+
+            <div class='form-group'>
+              <input class='form-input' type='text' id='newpost-title' value='{{post.title}}' placeholder='title' />
+            </div>
+      
+            <div class='form-group'>
+              <textarea class='form-input' id='newpost-body'>{{post.description}}</textarea>
+            </div>
+
+          </form>
+
+          {{/each}}
+
+            <div class='form-group'>
+                <button class='btn' type='submit'>UPDATE POST</button>
+            </div>
+
+         {{else}} 
+         
+          <!-- WORDS FINDER -->
+
+          <div id="words-finder" class="collapse-open">
+            <form id="words-finder">
+
+              <div class='form-block query-builder'>
+
+                <div class='form-group col-3'>
+                  <select id='words-pos'>
+                    <option value='n'>nouns</option>
+                    <option value='v'>verbs</option>
+                    <option value='adj'>adjectives</option>
+                    <option value='adv'>adverbs</option>
+                    <option value='u'>other</option>
+                  </select>
+                </div>
+
+                <div class='form-group col-3'>
+                  <select id='words-pos'>
+                    <option value='rel_trg'>about</option>
+                    <option value='ml'>like</option>
+                    <option value='rel_rhy'>rhyming with</option>
+                  </select>
+                </div>
+
+                <div class='form-group col-3'>
+                  <input type="text" id="word-relation" />
+                </div>
+
+              </div>
+
+              <div class="form-block other-options">
+                <button class="btn col-3" data-func="surprise-me">SURPRISE ME</button>
+
+                <!-- these two toggle on and off, depending if the post is empty or not -->
+                <!-- one clears the form, the other follows one of a few basic formulas to start a poem -->
+                <button class="btn col-3" data-func="start-over">START OVER</button>
+                <button class="btn col-3" data-func="get-me-started">GET ME STARTED</button>
+
+              </div>
+
+            </form>
+
+          </div> <!-- end of #words-finder -->
+
+
+          <div id="word-list-dynamic"></div>
+
+          <div id="word-list-static">
+              <div id="static-fragments"></div> <!-- things like s, y, linebreak - these are highlighted and listed first -->
+              <div id="static-words"></div> <!-- basics like pronouns, conjunctions, conditionals, etc. -->
+          </div>
+
+
+          <!-- POEM -->
+
+          <div class="poem-container"></div>
+
+          <form class="form create-a-post-form" data-func="save">
+
+            <div class='form-group'>
+              <input class='form-input' type='text' id='newpost-title' placeholder='title' />
+            </div>
+      
+            <!-- This one probably gets deleted. Could add values to it on submit, but probably best just to make a poem string and use that. -->
+            <div class='form-group'>
+              <textarea class='form-input' id='newpost-body'></textarea>
+            </div>
+
+            <div class='form-group'>
+              <button class='btn' type='submit'>SAVE POST</button>
+            </div>
+
+          </form>
+
+
+
+          {{/if}}
+
+            <div class='form-group'>
+              <a href="/dashboard">cancel</a>
+            </div>
+
+      
+
+</div>

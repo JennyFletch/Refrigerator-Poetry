@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refrigerator POETRY</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header class="display-flex justify-space-between align-center p-2">
+    <nav class="container">
+      <a href="/">HOME</a>
+    {{#if logged_in}}
+      <a href="/dashboard">DASHBOARD</a>
+      <button class="btn" id="nav-logout">LOGOUT</button>
+    {{else}}
+      <a href="/login">LOGIN</a>
+      <a href="/register">REGISTER</a>
+    {{/if}}
+    </nav>
+  </header>
+  <main>
+    {{{ body }}}
+  </main>
+  <footer>
+      
+  </footer>
+
+  <script src="/js/login.js"></script>
+  <script src="/js/register.js"></script>
+  <script src="/js/words.js"></script>
+  <script src="/js/fridge.js"></script>
+  <script src="/js/post.js"></script>
+  <script src="/js/comment.js"></script>
+  
+</body>
+
+
+</html>

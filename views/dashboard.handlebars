@@ -1,0 +1,30 @@
+<div class="title-bar">
+    <h1 class="container py-2">Dashboard</h1>
+</div>
+
+<div class="blogroll-posts container">
+
+<!-- Loop through each of the user's posts -->
+{{#each posts as |post| }}
+    <div class="blogroll-post user-post">
+       <h3 class="post-title display-flex justify-space-between-lg align-center"><span>{{post.title}}</span> <span class="meta">Posted by {{post.user.username}} on {{format_date post.date_created}}</span></h3>
+       <div class="post-content">{{post.description}}</div>
+       <div class="post-comments">
+            <ul id="pc-{{post.id}}" class="post-comments">
+                {{#each comments as |comment|}}
+                <li>{{comment.description}} <div class="meta">&mdash; {{comment.user.username}}, {{format_date comment.date_created}}</div></li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="post-buttons display-flex justify-flex-end">
+            <button class="btn update-a-post" data-id="{{post.id}}" data-func="update">UPDATE POST</button>
+            <button class="btn delete-a-post" data-id="{{post.id}}" data-func="delete">DELETE</button>
+        </div>
+    </div>
+{{/each}}
+
+<div class="text-center">
+    <button class="btn col-2" id="create-post">+ ADD POST</button>
+</div>
+
+</div>

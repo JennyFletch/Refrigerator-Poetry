@@ -1,0 +1,26 @@
+[
+    {
+      "title": "The MVC Model",
+      "description": "As applications grew larger over the years, the need to organize files became much more vital to keeping projects managable.",
+      "date_created": "01-03-2023",
+      "user_id": 2
+    },
+    {
+      "title": "Farewell to Flash",
+      "description": "When Apple decided the iPad would not support Flash elements, many developers found themselves needing new skills in a pretty big hurry.",
+      "date_created": "11-14-2022",
+      "user_id": 3
+    },
+    {
+      "title": "Wordpress for Beginners",
+      "description": "The user-friendliness of tools like Wordpress empower users new to blogging and the web to create enterprise-level applications under tight deadlines.",
+      "date_created": "09-18-2021",
+      "user_id": 1
+    },
+    {
+      "title": "Writing in Binary is Fun",
+      "description": "01100010 01100101 00100000 01110011 01110101 01110010 01100101 00100000 01110100 01101111 00100000 01100100 01110010 01101001 01101110 01101011 00100000 01111001 01101111 01110101 01110010 00100000 01101111 01110110 01100001 01101100 01110100 01101001 01101110 01100101",
+      "date_created": "01-15-2023",
+      "user_id": 2
+    }
+]  

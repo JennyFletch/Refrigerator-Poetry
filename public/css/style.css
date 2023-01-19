@@ -1,0 +1,140 @@
+:root {
+    --main-neutral:#ededed;
+    --main-highlight:#10606c;
+    --main-accent:#65adb8; 
+    --main-white:#fff;
+}
+
+body {
+    background-color: var(--main-neutral);
+}
+
+a {
+    color: var(--main-highlight);
+}
+
+.btn {
+    background-color: var(--main-highlight);
+    color:#fff;
+}
+
+.btn:hover {
+    background-color: var(--main-accent);
+    color:#fff;
+}
+
+#nav-logout.btn:hover {
+    color: var(--main-highlight);
+}
+
+nav a, nav .btn {
+    margin:0 25px 0 0;
+    color: var(--main-highlight);
+    background:none;
+    padding:0;
+}
+
+nav a:hover, nav .btn:hover {
+    background:none;
+    cursor:pointer;
+    text-decoration:underline;
+}
+
+.title-bar {
+    background-color: var(--main-highlight);
+    color: var(--main-white)
+}
+
+main { 
+    padding-bottom:80px; 
+}
+
+main .blogroll-post {
+    background-color: var(--main-white);
+    margin:40px 0 10px; 
+    border-radius:6px;
+    overflow:hidden;
+}
+
+main .blogroll-post h3.post-title {
+    background-color: var(--main-accent);
+    color: var(--main-white);
+    font-size:1.25rem;
+    padding:10px 25px;
+}
+
+main .blogroll-post h3.post-title .meta {
+    font-weight:normal; 
+    font-size:.8rem;
+}
+
+main .blogroll-post .post-content {
+    padding:5px 25px 10px;
+}
+
+main .blogroll-post .post-comments {
+    padding:10px 25px;
+}
+
+main .blogroll-post .post-comments ul {
+    margin:0;
+    padding:0;
+}
+
+main .blogroll-post .post-comments ul li {
+    list-style:none;
+    margin:10px 0 5px;
+    background-color: var(--main-neutral);
+    padding:10px 25px;
+    border-radius:12px 12px 12px 0;
+}
+
+main .blogroll-post .post-comments ul li .meta {
+    padding-top:10px;
+    font-size:.8rem;
+}
+
+main .blogroll-posts #create-post { 
+    margin-top:25px;
+    cursor:pointer; 
+}
+
+main input#newpost-title {
+    font-weight:bold;
+}
+
+main .blogroll-posts .post-buttons,
+main .post-comment-button,
+main .post-comment-form-outer {
+    padding:0 25px 15px 25px;
+}
+
+main .post-comment-button {
+    text-align:center;
+}
+
+main .post-comment-form-outer {
+    display:none;
+}
+
+main .blogroll-posts .post-buttons .btn {
+    margin-left:10px;
+}
+
+main .user-login, 
+main .user-registration,
+main .create-a-post {
+    padding:40px 0 0 0; 
+}
+
+main .user-login form a, 
+main .user-registration form a,
+main .create-a-post form a {
+    font-size:.8rem;
+    font-weight:bold;
+    text-decoration:underline;
+}
+
+main .create-a-post textarea {
+    height:160px;
+}

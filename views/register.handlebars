@@ -1,0 +1,36 @@
+<!-- display registration form if user is not logged in -->
+
+<div class="title-bar">
+    <h1 class="container py-2">User Registration</h1>
+</div>
+
+<div class="user-registration container">
+
+{{#if logged_in}}
+
+      <h2>WELCOME</h2>
+      <p>You are currently logged in. </p>
+      <p><button class="btn" id="logout">LOGOUT</button></p>
+
+{{else}}
+
+    <div class='registration-form-outer'>
+      <form class='form registration-form'>
+        <div class='form-group'>
+          <input class='form-input col-4' type='text' id='username-signup' placeholder="username" />
+        </div>
+        <div class='form-group'>
+          <input class='form-input col-4' type='password' id='password-signup' placeholder="password" />
+        </div>
+        <div class='form-group'>
+          <button class='btn' type='submit'>REGISTER</button>
+        </div>
+        <div class='form-group'>
+          <a href="/login">login instead</a>
+        </div>
+      </form>
+    </div>
+    
+{{/if}}
+
+</div>
