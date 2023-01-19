@@ -1,35 +1,67 @@
 :root {
-    --main-neutral:#ededed;
-    --main-highlight:#10606c;
-    --main-accent:#65adb8; 
+    --main-neutral:#f3f3f3;
+    --main-dark:#73d0de;
+    --main-dark-highlight:#7adceb;
+    --main-accent:#cdd3d4;
+    --main-accent-highlight:#dadfe0;
+    --color-pop:#f5cf25;
+    --color-pop-highlight:#ffd726;
     --main-white:#fff;
+    --main-black: #333;
 }
 
 body {
     background-color: var(--main-neutral);
+    background-size:cover;
+}
+
+h3 {
+    font-size:1.5rem;
 }
 
 a {
-    color: var(--main-highlight);
+    color: var(--main-dark);
+}
+
+select {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.625rem 0;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    margin: 0.625rem 0;
+    font-size: 1.2rem;
+    border: 1px solid #484848;
+    border-radius: 0.3rem;
 }
 
 .btn {
-    background-color: var(--main-highlight);
+    background-color:var(--main-accent);
     color:#fff;
+    white-space: nowrap;
+    font-weight:bold;
 }
 
 .btn:hover {
-    background-color: var(--main-accent);
+    background-color: var(--main-accent-highlight);
     color:#fff;
 }
 
+.btn-submit {
+    background-color:var(--color-pop);
+}
+
+.btn-submit:hover {
+    background-color:var(--color-pop-highlight);
+}
+
 #nav-logout.btn:hover {
-    color: var(--main-highlight);
+    color: var(--main-dark);
 }
 
 nav a, nav .btn {
-    margin:0 25px 0 0;
-    color: var(--main-highlight);
+    margin:0 0 0 25px;
+    color: var(--main-black);
     background:none;
     padding:0;
 }
@@ -41,7 +73,7 @@ nav a:hover, nav .btn:hover {
 }
 
 .title-bar {
-    background-color: var(--main-highlight);
+    background-color: var(--main-dark);
     color: var(--main-white)
 }
 
@@ -57,7 +89,7 @@ main .blogroll-post {
 }
 
 main .blogroll-post h3.post-title {
-    background-color: var(--main-accent);
+    background-color: var(--main-dark-highlight);
     color: var(--main-white);
     font-size:1.25rem;
     padding:10px 25px;
@@ -95,7 +127,7 @@ main .blogroll-post .post-comments ul li .meta {
 }
 
 main .blogroll-posts #create-post { 
-    margin-top:25px;
+    margin-top:0px;
     cursor:pointer; 
 }
 
@@ -124,7 +156,7 @@ main .blogroll-posts .post-buttons .btn {
 main .user-login, 
 main .user-registration,
 main .create-a-post {
-    padding:40px 0 0 0; 
+    padding:0; 
 }
 
 main .user-login form a, 
@@ -138,3 +170,74 @@ main .create-a-post form a {
 main .create-a-post textarea {
     height:160px;
 }
+
+main .query-builder .btn,
+main .create-a-post-form .btn {
+    margin:0 0 0.625rem 0;
+}
+
+main .query-builder .btn {
+    white-space: nowrap;
+    font-weight:bold;
+}
+
+main .query-builder input,
+main .query-builder select,
+main .create-a-post-form input,
+main .other-options button {
+    margin:0 10px 10px 0;
+}
+
+main h3.collapse {
+    background-color:var(--main-dark);
+    color: var(--main-white);
+    padding:10px 25px;
+    margin:25px 0 0 0;
+}
+
+main .collapse-content { 
+    padding:0 25px 10px; 
+    background-color: var(--main-white);
+}
+
+main .collapse-content .form-group {
+    padding-top:20px;
+    margin-top:0px;
+}
+
+main #word-list-dynamic,
+main #word-list-static {
+    padding-top:10px;
+}
+
+main #poem-container {
+    background-color:var(--main-white);
+    border:1px solid var(--main-black);
+    min-height:180px;
+    margin:20px 0 10px 0; 
+    border-radius:0.3rem;
+}
+
+main #poem-container.empty {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    font-size:1.25rem;
+    color:#ddd;
+}
+
+.magnet {
+    padding:5px 12px;
+    border:2px solid var(--main-black);
+    color: var(--main-black);
+    background-color: var(--main-white);
+    border-radius: 6px;
+    font-size:1.35rem;
+    text-transform:uppercase;
+    margin:0 10px 10px 0;
+    display:inline-block;
+    box-shadow:1px 1px 4px rgba(0,0,0,0.3);
+}
+
+

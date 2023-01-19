@@ -1,10 +1,6 @@
 <!-- display registration form if user is not logged in -->
 <!-- otherwise they get to create new posts as a registered user -->
 
-<div class="title-bar">
-    <h1 class="container py-2">Create a Post</h1>
-</div>
-
 <div class="create-a-post container">
 
       
@@ -32,44 +28,37 @@
          {{else}} 
          
           <!-- WORDS FINDER -->
+          <h3 class="collapse open">FIND WORDS:</h3>
 
-          <div id="words-finder" class="collapse-open">
+          <div id="words-finder" class="collapse-content">
             <form id="words-finder">
 
-              <div class='form-block query-builder'>
+              <div class='form-block display-flex justify-space-between query-builder form-group'>
 
-                <div class='form-group col-3'>
-                  <select id='words-pos'>
+                
+                  <select id='words-pos' class='select'>
                     <option value='n'>nouns</option>
                     <option value='v'>verbs</option>
                     <option value='adj'>adjectives</option>
                     <option value='adv'>adverbs</option>
                     <option value='u'>other</option>
                   </select>
-                </div>
-
-                <div class='form-group col-3'>
-                  <select id='words-pos'>
+                
+                  <select id='words-pos' class='select'>
                     <option value='rel_trg'>about</option>
                     <option value='ml'>like</option>
                     <option value='rel_rhy'>rhyming with</option>
                   </select>
-                </div>
-
-                <div class='form-group col-3'>
-                  <input type="text" id="word-relation" />
-                </div>
+                
+                  <input type="text" id="word-relation" class="form-input" />
+                
+                  <button class="btn btn-submit">GO ></button>
+                
 
               </div>
 
-              <div class="form-block other-options">
-                <button class="btn col-3" data-func="surprise-me">SURPRISE ME</button>
-
-                <!-- these two toggle on and off, depending if the post is empty or not -->
-                <!-- one clears the form, the other follows one of a few basic formulas to start a poem -->
-                <button class="btn col-3" data-func="start-over">START OVER</button>
-                <button class="btn col-3" data-func="get-me-started">GET ME STARTED</button>
-
+              <div class="form-block other-options display-flex justify-flex-start flex-wrap">
+                <button class="btn" data-func="surprise-me">SURPRISE ME</button>
               </div>
 
             </form>
@@ -77,42 +66,45 @@
           </div> <!-- end of #words-finder -->
 
 
-          <div id="word-list-dynamic"></div>
+          <h3 class="collapse open">SUPPORTING WORDS AND HELPERS</h3>
 
-          <div id="word-list-static">
-              <div id="static-fragments"></div> <!-- things like s, y, linebreak - these are highlighted and listed first -->
-              <div id="static-words"></div> <!-- basics like pronouns, conjunctions, conditionals, etc. -->
-          </div>
+          <div class="collapse-content">
+
+            <div id="word-list-dynamic"></div>
+
+            <div id="word-list-static">
+                <div id="static-fragments"></div> <!-- things like s, y, linebreak - these are highlighted and listed first -->
+                <div id="static-words"></div> <!-- basics like pronouns, conjunctions, conditionals, etc. -->
+            </div>
+          
+          </div> <!-- end .collapse-content -->
 
 
           <!-- POEM -->
 
-          <div class="poem-container"></div>
+          <div id="poem-container" class="empty">drag words here to create your poem</div>
+
+          <div id="help-buttons" class="text-right">
+               <!-- these two toggle on and off, depending if the post is empty or not -->
+               <!-- one clears the form, the other follows one of a few basic formulas to start a poem -->
+               <button class="btn" data-func="start-over">START OVER</button>
+               <button class="btn" data-func="get-me-started">GET ME STARTED</button>
+          </div>
 
           <form class="form create-a-post-form" data-func="save">
 
-            <div class='form-group'>
-              <input class='form-input' type='text' id='newpost-title' placeholder='title' />
+            <div class='form-group display-flex justify-content-space-between'>
+              <input class='form-input' type='text' id='newpost-title' placeholder='title of your poem' />
+              <button class='btn btn-submit' type='submit'>SAVE</button>
             </div>
       
             <!-- This one probably gets deleted. Could add values to it on submit, but probably best just to make a poem string and use that. -->
-            <div class='form-group'>
-              <textarea class='form-input' id='newpost-body'></textarea>
-            </div>
-
-            <div class='form-group'>
-              <button class='btn' type='submit'>SAVE POST</button>
-            </div>
+              <input type="hidden" class='form-input' id='newpost-body'></textarea>
+  
 
           </form>
 
-
-
           {{/if}}
-
-            <div class='form-group'>
-              <a href="/dashboard">cancel</a>
-            </div>
 
       
 

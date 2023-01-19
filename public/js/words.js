@@ -1,3 +1,3 @@
-const staticFragments = [ "LINEBREAK", "Y", "S", "'S", "'", "-", ".", "," ];
+const staticFragments = [ "LINEBREAK", ",", "'", ",", "-", "?", "!", "S", "Y", "LY" ];
 
-const staticWords = [ "IF", "AND", "OR", "WHEN", "BUT", "ALWAYS", "NEVER" ];
+const staticWords = [ "NOT", "IF", "AND", "OR", "BUT", "NOR", "ALWAYS", "NEVER", "WHAT", "WHEN", "WHERE", "WHY", "WHO", "WHOM", "THOUGH", "ALSO", "HOWEVER", "CAN", "DOES", "DO", "HAVE", "HAS", "WOULD", "SHOULD", "CAN", "BE", "ARE", "HE", "HIM", "HIS", "SHE", "HER", "HERS", "THEY", "THEIR", "THEM" ];

@@ -10,8 +10,13 @@
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <nav class="container">
+  <header class="container display-flex justify-space-between align-center p-2">
+
+    <div class="nav-brand">
+      LOGO
+    </div>
+
+    <nav class="text-right">
       <a href="/">HOME</a>
     {{#if logged_in}}
       <a href="/dashboard">DASHBOARD</a>
