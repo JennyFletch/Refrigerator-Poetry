@@ -28,74 +28,73 @@
          {{else}} 
          
           <!-- WORDS FINDER -->
-          <h3 class="collapse open">FIND WORDS:</h3>
+          <div class="collapse-outer">
+            <h3 class="collapse open">FIND WORDS:</h3>
 
-          <div id="words-finder" class="collapse-content">
-            <form id="words-finder">
+            <div id="words-finder" class="collapse-content">
+              <form id="words-finder-form">
 
-              <div class='form-block display-flex justify-space-between query-builder form-group'>
+                <div class='form-block display-flex justify-space-between query-builder form-group'>
 
-                
-                  <select id='words-pos' class='select'>
-                    <option value='n'>nouns</option>
-                    <option value='v'>verbs</option>
-                    <option value='adj'>adjectives</option>
-                    <option value='adv'>adverbs</option>
-                    <option value='u'>other</option>
-                  </select>
-                
-                  <select id='words-pos' class='select'>
-                    <option value='rel_trg'>about</option>
-                    <option value='ml'>like</option>
-                    <option value='rel_rhy'>rhyming with</option>
-                  </select>
-                
-                  <input type="text" id="word-relation" class="form-input" />
-                
-                  <button class="btn btn-submit">GO ></button>
-                
+                  
+                    <select id='words-pos' class='select'>
+                      <option value='n'>nouns</option>
+                      <option value='v'>verbs</option>
+                      <option value='adj'>adjectives</option>
+                    </select>
+                  
+                    <select id='words-behavior' class='select'>
+                      <option value='rel_trg'>about</option>
+                      <option value='ml'>like</option>
+                      <option value='rel_rhy'>rhyming with</option>
+                    </select>
+                  
+                    <input type="text" id="words-subject" class="form-input" placeholder="subject" />
+                  
+                    <button id="find-words-btn" class="btn btn-submit">GO ></button>
+                  
 
-              </div>
+                </div>
+              </form>
 
-              <div class="form-block other-options display-flex justify-flex-start flex-wrap">
-                <button class="btn" data-func="surprise-me">SURPRISE ME</button>
-              </div>
+                <div class="other-options display-flex justify-flex-end flex-wrap text-right">
+                  <button class="btn" data-func="surprise-me">SURPRISE ME</button>
+                </div>
 
-            </form>
+                <div id="word-list-dynamic"></div>
 
-          </div> <!-- end of #words-finder -->
+            </div> <!-- end of #words-finder -->
+          </div> <!-- end of .collapse-outer -->
 
-
-          <h3 class="collapse open">SUPPORTING WORDS AND HELPERS</h3>
-
-          <div class="collapse-content">
-
-            <div id="word-list-dynamic"></div>
-
-            <div id="word-list-static">
-                <div id="static-fragments"></div> <!-- things like s, y, linebreak - these are highlighted and listed first -->
-                <div id="static-words"></div> <!-- basics like pronouns, conjunctions, conditionals, etc. -->
-            </div>
+          <div class="collapse-outer">
+            <h3 class="collapse open">SUPPORTING WORDS AND HELPERS</h3>
+            <div class="collapse-content">
           
-          </div> <!-- end .collapse-content -->
+              <div id="word-list-static">
+                  <div id="static-fragments"></div> <!-- things like s, y, linebreak - these are highlighted and listed first -->
+                  <div id="static-words"></div> <!-- basics like pronouns, conjunctions, conditionals, etc. -->
+              </div>
+          
+            </div> <!-- end .collapse-content -->
+          </div> <!-- end .collapse-outer -->
 
 
           <!-- POEM -->
 
-          <div id="poem-container" class="empty">drag words here to create your poem</div>
+          <div id="poem-container" class="empty">drag words here to start your poem</div>
 
           <div id="help-buttons" class="text-right">
                <!-- these two toggle on and off, depending if the post is empty or not -->
                <!-- one clears the form, the other follows one of a few basic formulas to start a poem -->
-               <button class="btn" data-func="start-over">START OVER</button>
-               <button class="btn" data-func="get-me-started">GET ME STARTED</button>
+               <button class="btn floating" data-func="start-over">START OVER</button>
+               <button class="btn floating" data-func="get-me-started">GET ME STARTED</button>
           </div>
 
           <form class="form create-a-post-form" data-func="save">
 
             <div class='form-group display-flex justify-content-space-between'>
               <input class='form-input' type='text' id='newpost-title' placeholder='title of your poem' />
-              <button class='btn btn-submit' type='submit'>SAVE</button>
+              <button class='btn btn-submit floating' type='submit'>SAVE</button>
             </div>
       
             <!-- This one probably gets deleted. Could add values to it on submit, but probably best just to make a poem string and use that. -->

@@ -12,7 +12,7 @@
 
 body {
     background-color: var(--main-neutral);
-    background-size:cover;
+    background-image:url(../images/bg-retro.png)
 }
 
 h3 {
@@ -133,6 +133,8 @@ main .blogroll-posts #create-post {
 
 main input#newpost-title {
     font-weight:bold;
+    box-shadow:0 1px 3px rgba(0,0,0,0.3);
+    border:none;
 }
 
 main .blogroll-posts .post-buttons,
@@ -183,16 +185,26 @@ main .query-builder .btn {
 
 main .query-builder input,
 main .query-builder select,
-main .create-a-post-form input,
-main .other-options button {
+main .create-a-post-form input {
     margin:0 10px 10px 0;
+}
+
+main .other-options button {
+    margin-bottom:10px;
+}
+
+main .collapse-outer {
+    box-shadow:0 1px 5px rgb(0,0,0,0.3);
+    border-radius:0.3rem;
+    margin:25px 0 0 0;
+    overflow:hidden;
 }
 
 main h3.collapse {
     background-color:var(--main-dark);
     color: var(--main-white);
     padding:10px 25px;
-    margin:25px 0 0 0;
+    margin-bottom:0px;
 }
 
 main .collapse-content { 
@@ -212,10 +224,10 @@ main #word-list-static {
 
 main #poem-container {
     background-color:var(--main-white);
-    border:1px solid var(--main-black);
     min-height:180px;
     margin:20px 0 10px 0; 
     border-radius:0.3rem;
+    box-shadow:0 1px 5px rgb(0,0,0,0.3);
 }
 
 main #poem-container.empty {
@@ -238,6 +250,11 @@ main #poem-container.empty {
     margin:0 10px 10px 0;
     display:inline-block;
     box-shadow:1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.btn.floating {
+    border:3px solid #fff;
+    box-shadow:0 1px 3px rgba(0,0,0,0.3);
 }
 
 
