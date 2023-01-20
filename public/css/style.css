@@ -205,6 +205,8 @@ main h3.collapse {
     color: var(--main-white);
     padding:10px 25px;
     margin-bottom:0px;
+    text-align:right;
+    font-size:1rem;
 }
 
 main .collapse-content { 
@@ -217,6 +219,13 @@ main .collapse-content .form-group {
     margin-top:0px;
 }
 
+main #words-finder-form h3 {
+    white-space:nowrap;
+    margin:0 25px 0 0;
+    padding:0;
+    line-height:46px;
+}
+
 main #word-list-dynamic,
 main #word-list-static {
     padding-top:10px;
@@ -224,7 +233,7 @@ main #word-list-static {
 
 main #poem-container {
     background-color:var(--main-white);
-    min-height:180px;
+    min-height:200px;
     margin:20px 0 10px 0; 
     border-radius:0.3rem;
     box-shadow:0 1px 5px rgb(0,0,0,0.3);
@@ -235,7 +244,7 @@ main #poem-container.empty {
     flex-direction:row;
     justify-content:center;
     align-items:center;
-    font-size:1.25rem;
+    font-size:1.35rem;
     color:#ddd;
 }
 
