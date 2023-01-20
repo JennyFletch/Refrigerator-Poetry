@@ -67,19 +67,19 @@ findWordsBtnEl.addEventListener("click", function(e) {
         })
         .then(function (data) {
 
-            // console.log(data[0].word);
-
-            for(var i=0; i < wordsToRequest; i++) {
-                if(data[i].word) {
-                    var newDynamicWord = document.createElement("div");
-                    newDynamicWord.className = "magnet";
-                    newDynamicWord.innerHTML = data[i].word;
-                    wordsDynamicEl.appendChild(newDynamicWord);
-                } else {
-                    alert("No words matched your search. Please try something else.");
+            if(!data[0]) {
+                alert("No words matched your search. Please try something else.");
+            } else {
+                for(var i=0; i < wordsToRequest; i++) {
+                    
+                        var newDynamicWord = document.createElement("div");
+                        newDynamicWord.className = "magnet";
+                        newDynamicWord.innerHTML = data[i].word;
+                        wordsDynamicEl.appendChild(newDynamicWord);
                 }
             }
         });
+
     } else {
         alert("Please include a subject and try your search again.");
     }
