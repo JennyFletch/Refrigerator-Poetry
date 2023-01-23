@@ -237,13 +237,14 @@ main #poem-container {
     border-radius:0.3rem;
     box-shadow:0 1px 5px rgb(0,0,0,0.3);
     padding:20px 25px;
+    text-align:center;
+}
+
+main #poem-container.empty {
     display:flex;
     flex-direction:row;
     justify-content:center;
     align-items:center;
-}
-
-main #poem-container.empty {
     font-size:1.35rem;
     color:#ddd;
 }

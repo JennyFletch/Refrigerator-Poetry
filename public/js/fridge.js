@@ -8,6 +8,7 @@ var findWordsBtnEl = document.getElementById("find-words-btn");
 var wordsDynamicEl = document.getElementById("word-list-dynamic");
 var poemContainerEl = document.getElementById("poem-container");
 const wordsToRequest = 42;
+var lineBreakTracker = 0;
 
 
 function loadStaticWords() {
@@ -76,7 +77,6 @@ findWordsBtnEl.addEventListener("click", function(e) {
 
 function moveMagnet(e) {
     e.stopPropagation();
-    console.log("clicking on " + e.target.innerHTML);
     var wordSelection = e.target.innerHTML;
 
     if(e.target.classList.contains("magnet")) {
@@ -85,11 +85,22 @@ function moveMagnet(e) {
             poemContainerEl.classList.remove("empty");
             poemContainerEl.innerHTML = '';
         }
-
-        var poemWord = document.createElement("div");
-        poemWord.className = "magnet";
-        poemWord.innerHTML = wordSelection;
-        poemContainerEl.appendChild(poemWord);
+        if(wordSelection === "LINEBREAK") {
+            lineBreakTracker++;
+            var lineBreakIcon = document.createElement("span");
+            lineBreakIcon.innerHTML = "X";
+            lineBreakIcon.className = "lineBR";
+            lineBreakIcon.setAttribute("data-id", lineBreakTracker);
+            poemContainerEl.appendChild(lineBreakIcon);
+            var lineBreak = document.createElement("br");
+            lineBreak.setAttribute("data-id", lineBreakTracker);
+            poemContainerEl.appendChild(lineBreak);
+        } else {
+            var poemWord = document.createElement("span");
+            poemWord.className = "magnet";
+            poemWord.innerHTML = wordSelection;
+            poemContainerEl.appendChild(poemWord);
+        }
     }
 }
 
