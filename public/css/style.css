@@ -101,7 +101,12 @@ main .blogroll-post h3.post-title .meta {
 }
 
 main .blogroll-post .post-content {
-    padding:5px 25px 10px;
+    padding:15px 25px 10px;
+    text-align:center;
+}
+
+main .blogroll-post .post-content .lineBR {
+    display:none;
 }
 
 main .blogroll-post .post-comments {

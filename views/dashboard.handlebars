@@ -4,7 +4,7 @@
 {{#each posts as |post| }}
     <div class="blogroll-post user-post">
        <h3 class="post-title display-flex justify-space-between-lg align-center"><span>{{post.title}}</span> <span class="meta">Posted by {{post.user.username}} on {{format_date post.date_created}}</span></h3>
-       <div class="post-content">{{post.description}}</div>
+       <div class="post-content">{{{post.description}}}</div>
        <div class="post-comments">
             <ul id="pc-{{post.id}}" class="post-comments">
                 {{#each comments as |comment|}}

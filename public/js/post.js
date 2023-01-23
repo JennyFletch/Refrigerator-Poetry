@@ -3,7 +3,9 @@ const savePost = async (e) => {
     e.preventDefault();
 
     const newpost_title = document.querySelector('#newpost-title').value.trim();
-    const newpost_body = document.querySelector('#newpost-body').value.trim();
+    // const newpost_body = document.querySelector('#newpost-body').value.trim();
+    // console.log(document.getElementById("poem-container").innerHTML);
+    const newpost_body = document.getElementById("poem-container").innerHTML;
 
 
     const reqId = e.target.getAttribute('data-id');

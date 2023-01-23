@@ -13,25 +13,27 @@ var lineBreakTracker = 0;
 
 function loadStaticWords() {
 
-    for(var i=0; i < staticFragments.length; i++) {
-        var newStaticFragment = document.createElement("div");
-        newStaticFragment.className = "magnet";
-        newStaticFragment.innerHTML = staticFragments[i];
-        staticFragmentsEl.appendChild(newStaticFragment);
-    }
+    if(staticFragmentsEl && staticWordsEl) {
+        for(var i=0; i < staticFragments.length; i++) {
+            var newStaticFragment = document.createElement("div");
+            newStaticFragment.className = "magnet";
+            newStaticFragment.innerHTML = staticFragments[i];
+            staticFragmentsEl.appendChild(newStaticFragment);
+        }
 
-    for(var i=0; i < staticWords.length; i++) {
-        var newStaticWord = document.createElement("div");
-        newStaticWord.className = "magnet";
-        newStaticWord.innerHTML = staticWords[i];
-        staticWordsEl.appendChild(newStaticWord);
+        for(var i=0; i < staticWords.length; i++) {
+            var newStaticWord = document.createElement("div");
+            newStaticWord.className = "magnet";
+            newStaticWord.innerHTML = staticWords[i];
+            staticWordsEl.appendChild(newStaticWord);
+        }
     }
 }
 
 loadStaticWords();
 
 
-findWordsBtnEl.addEventListener("click", function(e) {
+function loadDynamicWords(e) {
     e.preventDefault();
 
     if(document.getElementById("words-subject").value) {
@@ -73,11 +75,12 @@ findWordsBtnEl.addEventListener("click", function(e) {
     } else {
         alert("Please include a subject and try your search again.");
     }
-});
+};
 
 function moveMagnet(e) {
     e.stopPropagation();
     var wordSelection = e.target.innerHTML;
+    document.location.hash = "#";
 
     if(e.target.classList.contains("magnet")) {
         
@@ -101,9 +104,29 @@ function moveMagnet(e) {
             poemWord.innerHTML = wordSelection;
             poemContainerEl.appendChild(poemWord);
         }
+        document.location.hash = "#poem-container";
     }
 }
 
+function helpButtonEvents(e) {
+    const reqAction = e.target.getAttribute('data-func');
+
+    switch (reqAction) {
+        case 'start-over':
+            poemContainerEl.innerHTML = 'click on word magnets to create your poem';
+            poemContainerEl.classList.add("empty");
+            break;
+        case 'get-me-started':
+            break;
+        default:
+            break;
+    }
+}
+
+
+if(findWordsBtnEl) {
+    findWordsBtnEl.addEventListener('click', loadDynamicWords);
+}
 
 // listen for magnet clicks 
 var magnetPanel1 = document.querySelector('#word-list-static');
@@ -113,4 +136,9 @@ if(magnetPanel1) {
 var magnetPanel2 = document.querySelector('#word-list-dynamic');
 if(magnetPanel2) {
     magnetPanel2.addEventListener('click', moveMagnet);
+}
+
+var helpButtonsEl = document.querySelector('#help-buttons');
+if(helpButtonsEl) {
+    helpButtonsEl.addEventListener('click', helpButtonEvents);
 }

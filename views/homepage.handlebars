@@ -3,7 +3,7 @@
     {{#each posts as |post| }}
         <div id="blogpost-{{post.id}}" class="blogroll-post">
             <h3 class="post-title display-flex justify-space-between-lg align-center" data-id="{{post.id}}"><span>{{post.title}}</span> <span class="meta">Posted by {{post.user.username}} on {{format_date post.date_created}}</span></h3>
-            <div class="post-content">{{post.description}}</div>
+            <div class="post-content">{{{post.description}}}</div>
             <div class="post-comments">
                 <ul id="pc-{{post.id}}" class="post-comments">
                     {{#each comments as |comment|}}
@@ -12,7 +12,7 @@
                 </ul>
             </div>
             <div class="post-comment-button">
-                <button class="btn comment-btn col-2" data-id="{{post.id}}" data-func="add-comment">+ ADD COMMENT</button>
+                <button class="btn comment-btn col-3" data-id="{{post.id}}" data-func="add-comment">+ ADD COMMENT</button>
             </div>
             <div class="post-comment-form-outer post-comment-form-{{post.id}}">
                 <form class="form comment-form">
