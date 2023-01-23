@@ -1,23 +1,12 @@
 // API INFO
 const datamuseBaseUrl = "https://api.datamuse.com/words";
 
-// datamuse samples 
-
-// Nouns meaning pants, max of 10
-// https://api.datamuse.com/words?mdp=n&ml=pants&max=10 
-
-// Nouns about pants, max of 10
-// https://api.datamuse.com/words?mdp=n&rel_trg=pants&max=10
-
-// Nouns that rhyme with pants, max of 10
-// https://api.datamuse.com/words?mdp=n&rel_rhy=pants&max=10
-
-
 // GLOBAL VARIABLES
 var staticFragmentsEl = document.getElementById("static-fragments");
 var staticWordsEl = document.getElementById("static-words");
 var findWordsBtnEl = document.getElementById("find-words-btn");
 var wordsDynamicEl = document.getElementById("word-list-dynamic");
+var poemContainerEl = document.getElementById("poem-container");
 const wordsToRequest = 42;
 
 
@@ -50,7 +39,7 @@ findWordsBtnEl.addEventListener("click", function(e) {
             wordsDynamicEl.removeChild(wordsDynamicEl.firstChild);
         }
         
-        const fwPos = "u"; // document.getElementById("words-pos").value; 
+        const fwPos = "u"; // document.getElementById("words-pos").value; <-- pos feature not reliable in API
         const fwBeh = document.getElementById("words-behavior").value;
         const fwSub = document.getElementById("words-subject").value;
 
@@ -70,13 +59,13 @@ findWordsBtnEl.addEventListener("click", function(e) {
             if(!data[0]) {
                 alert("No words matched your search. Please try something else.");
             } else {
-                for(var i=0; i < wordsToRequest; i++) {
-                    
-                        var newDynamicWord = document.createElement("div");
-                        newDynamicWord.className = "magnet";
-                        newDynamicWord.innerHTML = data[i].word;
-                        wordsDynamicEl.appendChild(newDynamicWord);
-                }
+
+                data.forEach(obj => {
+                    var newDynamicWord = document.createElement("div");
+                    newDynamicWord.className = "magnet";
+                    newDynamicWord.innerHTML = obj.word;
+                    wordsDynamicEl.appendChild(newDynamicWord);
+                });
             }
         });
 
@@ -84,3 +73,33 @@ findWordsBtnEl.addEventListener("click", function(e) {
         alert("Please include a subject and try your search again.");
     }
 });
+
+function moveMagnet(e) {
+    e.stopPropagation();
+    console.log("clicking on " + e.target.innerHTML);
+    var wordSelection = e.target.innerHTML;
+
+    if(e.target.classList.contains("magnet")) {
+        
+        if(poemContainerEl.classList.contains("empty")) {
+            poemContainerEl.classList.remove("empty");
+            poemContainerEl.innerHTML = '';
+        }
+
+        var poemWord = document.createElement("div");
+        poemWord.className = "magnet";
+        poemWord.innerHTML = wordSelection;
+        poemContainerEl.appendChild(poemWord);
+    }
+}
+
+
+// listen for magnet clicks 
+var magnetPanel1 = document.querySelector('#word-list-static');
+if(magnetPanel1) {
+    magnetPanel1.addEventListener('click', moveMagnet);
+}
+var magnetPanel2 = document.querySelector('#word-list-dynamic');
+if(magnetPanel2) {
+    magnetPanel2.addEventListener('click', moveMagnet);
+}

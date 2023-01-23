@@ -236,13 +236,14 @@ main #poem-container {
     margin:20px 0 10px 0; 
     border-radius:0.3rem;
     box-shadow:0 1px 5px rgb(0,0,0,0.3);
-}
-
-main #poem-container.empty {
+    padding:20px 25px;
     display:flex;
     flex-direction:row;
     justify-content:center;
     align-items:center;
+}
+
+main #poem-container.empty {
     font-size:1.35rem;
     color:#ddd;
 }
@@ -258,6 +259,16 @@ main #poem-container.empty {
     margin:0 10px 10px 0;
     display:inline-block;
     box-shadow:1px 1px 4px rgba(0,0,0,0.3);
+    cursor:pointer;
+    transition:background-color 0.3s ease;
+}
+
+.magnet:hover {
+    background-color: var(--main-accent-highlight);
+}
+
+main #poem-container .magnet {
+    background-color: var(--main-dark-highlight);
 }
 
 .btn.floating {
