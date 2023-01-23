@@ -3,39 +3,14 @@
 
 <div class="create-a-post container">
 
-      
-        {{#if posts}} <!-- EDIT AN EXISTING POST -->
-          {{#each posts as |post|}}
-
-            <form class='form update-a-post-form' data-id="{{post.id}}" data-func="update">
-
-            <div class='form-group'>
-              <input class='form-input' type='text' id='newpost-title' value='{{post.title}}' placeholder='title' />
-            </div>
-      
-            <div class='form-group'>
-              <textarea class='form-input' id='newpost-body'>{{post.description}}</textarea>
-            </div>
-
-          </form>
-
-          {{/each}}
-
-            <div class='form-group'>
-                <button class='btn' type='submit'>UPDATE POST</button>
-            </div>
-
-         {{else}} 
-         
-          <!-- WORDS FINDER -->
+    <!-- WORDS FINDER -->
           <div class="collapse-outer">
             <h3 class="collapse open">CLOSE X</h3>
 
             <div id="words-finder" class="collapse-content">
-              <form id="words-finder-form">
-
+      
+            <form id="words-finder-form">
                 <div class='form-block display-flex justify-space-between query-builder form-group'>
-
                   
                     <h3>FIND WORDS:</h3>
                   
@@ -45,10 +20,8 @@
                       <option value='rel_rhy'>rhyming with</option>
                     </select>
                   
-                    <input type="text" id="words-subject" class="form-input" placeholder="subject" />
-                  
-                    <button id="find-words-btn" class="btn btn-submit">GO ></button>
-                  
+                    <input type="text" id="words-subject" class="form-input" placeholder="subject" />          
+                    <button id="find-words-btn" class="btn btn-submit">GO ></button>                 
 
                 </div>
               </form>
@@ -70,31 +43,41 @@
             </div> <!-- end .collapse-content -->
           </div> <!-- end .collapse-outer -->
 
-
           <!-- POEM -->
-
-          <div id="poem-container" class="empty">click on word magnets to create your poem</div>
-
+          {{#if posts}} 
+            {{#each posts as |post|}}
+              <div id="poem-container">{{{post.description}}}</div>
+            {{/each}}
+          {{else}}
+            <div id="poem-container" class="empty">click on word magnets to create your poem</div>
+          {{/if}}
+          
           <div id="help-buttons" class="text-right">
-                <button class="btn floating" data-func="start-over">START OVER</button>
-               <!-- <button class="btn floating" data-func="get-me-started">GET ME STARTED</button> -->
+                <button class="btn floating col-3" data-func="start-over">START OVER</button>
           </div>
 
-          <form class="form create-a-post-form" data-func="save">
+          {{#if posts}} 
 
-            <div class='form-group display-flex justify-content-space-between'>
-              <input class='form-input' type='text' id='newpost-title' placeholder='title of your poem' />
-              <button class='btn btn-submit floating' type='submit'>SAVE</button>
-            </div>
-      
-            <!-- This one probably gets deleted. Could add values to it on submit, but probably best just to make a poem string and use that. -->
-              <input type="hidden" class='form-input' id='newpost-body'></textarea>
-  
+            {{#each posts as |post|}}
 
-          </form>
+                <form class='form update-a-post-form' data-id="{{post.id}}" data-func="update">
+                  <div class='form-group display-flex justify-content-space-between'>
+                    <input class='form-input' type='text' id='newpost-title' value="{{post.title}}" />
+                    <button class='btn btn-submit floating' type='submit'>UPDATE POST</button>
+                  </div>
+                </form>
+
+            {{/each}}
+
+          {{else}}
+
+                <form class="form create-a-post-form" data-func="save">
+                  <div class='form-group display-flex justify-content-space-between'>
+                    <input class='form-input' type='text' id='newpost-title' placeholder='title of your poem' />
+                    <button class='btn btn-submit floating' type='submit'>SAVE</button>
+                  </div>
+                </form>
 
           {{/if}}
-
-      
 
 </div>

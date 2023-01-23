@@ -179,7 +179,8 @@ main .create-a-post textarea {
 }
 
 main .query-builder .btn,
-main .create-a-post-form .btn {
+main .create-a-post-form .btn,
+main .update-a-post-form .btn {
     margin:0 0 0.625rem 0;
 }
 
@@ -190,7 +191,8 @@ main .query-builder .btn {
 
 main .query-builder input,
 main .query-builder select,
-main .create-a-post-form input {
+main .create-a-post-form input,
+main .update-a-post-form input {
     margin:0 10px 10px 0;
 }
 
@@ -265,16 +267,21 @@ main #poem-container.empty {
     margin:0 10px 10px 0;
     display:inline-block;
     box-shadow:1px 1px 4px rgba(0,0,0,0.3);
-    cursor:pointer;
     transition:background-color 0.3s ease;
 }
 
-.magnet:hover {
+main #word-list-static .magnet:hover,
+main #word-list-dynamic .magnet:hover,
+main #poem-container .magnet:hover {
     background-color: var(--main-accent-highlight);
+    cursor:pointer;
 }
 
 main #poem-container .magnet {
     background-color: var(--main-dark-highlight);
+}
+main #poem-container .magnet:hover {
+    background-color: var(--main-accent-highlight);
 }
 
 .btn.floating {
