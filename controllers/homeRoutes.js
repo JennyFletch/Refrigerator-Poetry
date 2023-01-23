@@ -80,6 +80,7 @@ router.get('/dashboard', async (req, res) => {
           },
           {
             model: Comment,
+            include: [User]
           },
         ],
     });

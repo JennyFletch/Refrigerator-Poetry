@@ -1,26 +1,20 @@
 [
     {
-      "title": "The MVC Model",
-      "description": "As applications grew larger over the years, the need to organize files became much more vital to keeping projects managable.",
+      "title": "Cleaning the Attic",
+      "description": "<span class='magnet'>humor</span><span class='magnet'>CAN</span><span class='magnet'>clear</span><span class='magnet'>the</span><span class='magnet'>cobwebs</span><span class='lineBR' data-id='2'>X</span><br data-id='2'><span class='magnet'>from</span><span class='magnet'>the</span><span class='magnet'>dustiest</span><span class='magnet'>musty</span><span class='magnet'>est</span><span class='magnet'>days</span>",
       "date_created": "01-03-2023",
       "user_id": 2
     },
     {
-      "title": "Farewell to Flash",
-      "description": "When Apple decided the iPad would not support Flash elements, many developers found themselves needing new skills in a pretty big hurry.",
+      "title": "Charming Bird Haiku",
+      "description": "<span class='magnet'>A</span><span class='magnet'>CLUSTER</span><span class='magnet'>OF</span><span class='magnet'>WORDS</span><span class='lineBR' data-id='1'>X</span><br data-id='1'><span class='magnet'>LIKE</span><span class='magnet'>HAPPY</span><span class='magnet'>LITTLE</span><span class='magnet'>SONGBIRDS</span><span class='lineBR' data-id='2'>X</span><br data-id='2'><span class='magnet'>CHIRPING</span><span class='magnet'>POETRY</span>",
       "date_created": "11-14-2022",
       "user_id": 3
     },
     {
-      "title": "Wordpress for Beginners",
-      "description": "The user-friendliness of tools like Wordpress empower users new to blogging and the web to create enterprise-level applications under tight deadlines.",
+      "title": "Time to Get Up",
+      "description": "<span class='magnet'>nightmares</span><span class='magnet'>come</span><span class='magnet'>creeping</span><span class='magnet'>IN</span><span class='lineBR' data-id='2'>X</span><br data-id='2'><span class='magnet'>WHEN</span><span class='magnet'>I</span><span class='magnet'>AM</span><span class='magnet'>sleeping</span><span class='magnet'>IN</span>",
       "date_created": "09-18-2021",
       "user_id": 1
-    },
-    {
-      "title": "Writing in Binary is Fun",
-      "description": "01100010 01100101 00100000 01110011 01110101 01110010 01100101 00100000 01110100 01101111 00100000 01100100 01110010 01101001 01101110 01101011 00100000 01111001 01101111 01110101 01110010 00100000 01101111 01110110 01100001 01101100 01110100 01101001 01101110 01100101",
-      "date_created": "01-15-2023",
-      "user_id": 2
     }
 ]  

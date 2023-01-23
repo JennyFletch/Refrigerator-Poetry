@@ -47,11 +47,13 @@ select {
     color:#fff;
 }
 
-.btn-submit {
+.btn-submit,
+#create-post {
     background-color:var(--color-pop);
 }
 
-.btn-submit:hover {
+.btn-submit:hover,
+#create-post:hover {
     background-color:var(--color-pop-highlight);
 }
 
@@ -79,6 +81,13 @@ nav a:hover, nav .btn:hover {
 
 main { 
     padding-bottom:80px; 
+}
+
+main .registration-form-outer,
+main .login-form-outer {
+    background-color: var(--main-white);
+    border-radius:6px;
+    border: 1px solid #484848;
 }
 
 main .blogroll-post {
@@ -132,7 +141,7 @@ main .blogroll-post .post-comments ul li .meta {
 }
 
 main .blogroll-posts #create-post { 
-    margin-top:0px;
+    margin-top:20px;
     cursor:pointer; 
 }
 
